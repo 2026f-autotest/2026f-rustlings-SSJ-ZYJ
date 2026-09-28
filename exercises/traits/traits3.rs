@@ -4,9 +4,13 @@
 // them return the same information without writing the same function twice.
 //
 // Consider what you can add to the Licensed trait.
+// 你的任务是为两个结构体实现 `Licensed` trait，并让它们返回相同的信息，同时不要重复编写函数。
+//
+// 想一想可以向 `Licensed` trait 中添加什么。
 //
 // Execute `rustlings hint traits3` or use the `hint` watch subcommand for a
 // hint.
+// 执行 `rustlings hint traits3` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -24,6 +28,7 @@ struct OtherSoftware {
 
 impl Licensed for SomeSoftware {} // Don't edit this line
 impl Licensed for OtherSoftware {} // Don't edit this line
+// 不要修改这两行。
 
 #[cfg(test)]
 mod tests {

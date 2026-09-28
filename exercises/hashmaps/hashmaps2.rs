@@ -13,6 +13,15 @@
 //
 // Execute `rustlings hint hashmaps2` or use the `hint` watch subcommand for a
 // hint.
+// 我们正在收集不同的水果制作美味的水果蛋糕，使用哈希映射表示水果篮。
+// 键表示收集到的水果名称，值表示该水果的数量。
+// 水果篮中已经有三种水果：苹果（4）、芒果（2）和荔枝（5）。
+// 你必须添加水果，使每种水果至少有一个且总数超过 11——我们有很多人要吃。
+// 不允许再添加这些已有的水果！
+//
+// 让代码通过测试！
+//
+// 执行 `rustlings hint hashmaps2` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -40,6 +49,8 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         // TODO: Insert new fruits if they are not already present in the
         // basket. Note that you are not allowed to put any type of fruit that's
         // already present!
+        // TODO：如果水果篮中还没有某种水果，就将其加入。
+        // 注意：不能加入已经存在的水果类型！
     }
 }
 
@@ -48,6 +59,7 @@ mod tests {
     use super::*;
 
     // Don't modify this function!
+    // 不要修改这个函数！
     fn get_fruit_basket() -> HashMap<Fruit, u32> {
         let mut basket = HashMap::<Fruit, u32>::new();
         basket.insert(Fruit::Apple, 4);

@@ -1,6 +1,8 @@
 /*
 	dfs
 	This problem requires you to implement a basic DFS traversal
+	dfs
+	本题要求实现基本的深度优先搜索遍历。
 */
 
 // I AM NOT DONE
@@ -27,6 +29,7 @@ impl Graph {
     }
 
     // Perform a depth-first search on the graph, return the order of visited nodes
+    // 执行深度优先搜索，并返回访问节点的顺序。
     fn dfs(&self, start: usize) -> Vec<usize> {
         let mut visited = HashSet::new();
         let mut visit_order = Vec::new(); 

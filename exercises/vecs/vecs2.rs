@@ -1,21 +1,28 @@
 // vecs2.rs
-//
-// A Vec of even numbers is given. Your task is to complete the loop so that
-// each number in the Vec is multiplied by 2.
+// A Vec of even numbers is given. Your task is to complete the loop
+// so that each number in the Vec is multiplied by 2.
 //
 // Make me pass the test!
 //
 // Execute `rustlings hint vecs2` or use the `hint` watch subcommand for a hint.
+// 一个偶数 `Vec` 已经给出。你的任务是完成循环，使 `Vec` 中的每个数字都乘以 2。
+//
+// 让代码通过测试！
+//
+// 执行 `rustlings hint vecs2` 获取提示，或使用 watch 子命令中的 hint。
 
+// I AM NOT DONE
 
 fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
     for element in v.iter_mut() {
         // TODO: Fill this up so that each element in the Vec `v` is
         // multiplied by 2.
-        *element *= 2;
+// TODO：补充代码，使 `Vec` `v` 中的每个元素都乘以 2。
+        ???
     }
 
     // At this point, `v` should be equal to [4, 8, 12, 16, 20].
+    // 此时，`v` 应等于 [4, 8, 12, 16, 20]。
     v
 }
 
@@ -23,7 +30,8 @@ fn vec_map(v: &Vec<i32>) -> Vec<i32> {
     v.iter().map(|element| {
         // TODO: Do the same thing as above - but instead of mutating the
         // Vec, you can just return the new number!
-        element * 2
+// TODO：完成与上面相同的操作，但不要修改 `Vec`，而是直接返回新数字！
+        ???
     }).collect()
 }
 

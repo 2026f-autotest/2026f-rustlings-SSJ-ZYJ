@@ -10,6 +10,12 @@
 //
 // Execute `rustlings hint hashmaps1` or use the `hint` watch subcommand for a
 // hint.
+// 需要定义一个哈希映射形式的水果篮。键表示水果名称，值表示篮中该水果的数量。
+// 你至少要放入三种不同的水果（例如苹果、香蕉、芒果），所有水果的总数至少为五。
+//
+// 让代码通过编译并通过测试！
+//
+// 执行 `rustlings hint hashmaps1` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -17,11 +23,14 @@ use std::collections::HashMap;
 
 fn fruit_basket() -> HashMap<String, u32> {
     let mut basket = // TODO: declare your hash map here.
+    // TODO：在这里声明哈希映射。
 
     // Two bananas are already given for you :)
+    // 已经为你放入两个香蕉了 :)
     basket.insert(String::from("banana"), 2);
 
     // TODO: Put more fruits in your basket here.
+    // TODO：在这里向水果篮中放入更多水果。
 
     basket
 }

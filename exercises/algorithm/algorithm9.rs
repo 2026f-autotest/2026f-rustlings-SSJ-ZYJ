@@ -1,6 +1,8 @@
 /*
 	heap
 	This question requires you to implement a binary heap function
+	堆
+	本题要求实现二叉堆的功能。
 */
 // I AM NOT DONE
 
@@ -67,11 +69,13 @@ where
     T: Default + Ord,
 {
     /// Create a new MinHeap
+    /// 创建一个新的最小堆。
     pub fn new_min() -> Self {
         Self::new(|a, b| a < b)
     }
 
     /// Create a new MaxHeap
+    /// 创建一个新的最大堆。
     pub fn new_max() -> Self {
         Self::new(|a, b| a > b)
     }

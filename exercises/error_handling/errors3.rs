@@ -6,6 +6,10 @@
 //
 // Execute `rustlings hint errors3` or use the `hint` watch subcommand for a
 // hint.
+// 这是一个试图使用上一题中已完成的 `total_cost` 函数的程序，但它无法正常工作！
+// 为什么？应该如何修复？
+//
+// 执行 `rustlings hint errors3` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

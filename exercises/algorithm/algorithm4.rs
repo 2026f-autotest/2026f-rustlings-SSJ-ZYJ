@@ -1,6 +1,8 @@
 /*
 	binary_search tree
 	This problem requires you to implement a basic interface for a binary tree
+	二叉搜索树
+	本题要求实现二叉树的基本接口。
 */
 
 //I AM NOT DONE
@@ -49,11 +51,13 @@ where
     }
 
     // Insert a value into the BST
+    // 向二叉搜索树中插入一个值。
     fn insert(&mut self, value: T) {
         //TODO
     }
 
     // Search for a value in the BST
+    // 在二叉搜索树中查找一个值。
     fn search(&self, value: T) -> bool {
         //TODO
         true
@@ -65,6 +69,7 @@ where
     T: Ord,
 {
     // Insert a node into the tree
+    // 向树中插入一个节点。
     fn insert(&mut self, value: T) {
         //TODO
     }

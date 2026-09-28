@@ -9,6 +9,11 @@
 //
 // Execute `rustlings hint using_as` or use the `hint` watch subcommand for a
 // hint.
+// Rust 中的类型转换通过 `as` 运算符完成。注意，`as` 不仅用于类型转换，也可用于重命名导入。
+//
+// 目标是确保除法能够通过编译，并返回正确的类型。
+//
+// 执行 `rustlings hint using_as` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

@@ -10,6 +10,12 @@
 //
 // Execute `rustlings hint iterators5` or use the `hint` watch subcommand for a
 // hint.
+// 我们定义一个简单模型来跟踪 Rustlings 题目进度。进度使用哈希映射表示，
+// 题目名称是键，进度是值。已有两个计数函数，用于统计具有给定进度的题目数量。
+// 请使用迭代器重新实现此计数功能。尽量不要使用命令式循环（for、while）。
+// 只需要修改两个迭代器方法（count_iterator 和 count_collection_iterator）。
+//
+// 执行 `rustlings hint iterators5` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -35,6 +41,8 @@ fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
 fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
     // map is a hashmap with String keys and Progress values.
     // map = { "variables1": Complete, "from_str": None, ... }
+    // map 是一个以 String 为键、以 Progress 为值的哈希映射。
+    // map = { "variables1": Complete, "from_str": None, ... }
     todo!();
 }
 
@@ -52,6 +60,9 @@ fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progres
 
 fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
     // collection is a slice of hashmaps.
+    // collection = [{ "variables1": Complete, "from_str": None, ... },
+    //     { "variables2": Complete, ... }, ... ]
+    // collection 是一个哈希映射切片。
     // collection = [{ "variables1": Complete, "from_str": None, ... },
     //     { "variables2": Complete, ... }, ... ]
     todo!();

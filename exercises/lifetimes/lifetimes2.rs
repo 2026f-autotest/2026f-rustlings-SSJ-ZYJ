@@ -5,6 +5,9 @@
 //
 // Execute `rustlings hint lifetimes2` or use the `hint` watch subcommand for a
 // hint.
+// 如果编译器只验证带注解的参数和返回类型中的引用，我们需要修改什么？
+//
+// 执行 `rustlings hint lifetimes2` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

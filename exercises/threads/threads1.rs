@@ -7,6 +7,10 @@
 //
 // Execute `rustlings hint threads1` or use the `hint` watch subcommand for a
 // hint.
+// 这个程序会创建多个线程，每个线程运行至少 250 毫秒，并返回其运行时间。
+// 程序应等待所有线程结束，并将它们的返回值收集到一个向量中。
+//
+// 执行 `rustlings hint threads1` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -27,6 +31,7 @@ fn main() {
     let mut results: Vec<u128> = vec![];
     for handle in handles {
         // TODO: a struct is returned from thread::spawn, can you use it?
+        // TODO：`thread::spawn` 返回了一个结构体，你能使用它吗？
     }
 
     if results.len() != 10 {

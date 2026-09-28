@@ -1,6 +1,8 @@
 /*
 	double linked list reverse
 	This problem requires you to reverse a doubly linked list
+	双向链表反转
+	本题要求反转一个双向链表
 */
 // I AM NOT DONE
 

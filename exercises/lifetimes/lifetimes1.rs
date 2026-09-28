@@ -7,6 +7,10 @@
 //
 // Execute `rustlings hint lifetimes1` or use the `hint` watch subcommand for a
 // hint.
+// Rust 编译器需要知道如何检查传入的引用是否有效，以便在引用可能在使用前离开作用域时提醒程序员。
+// 记住，引用是借用，不拥有自己的数据。那当所有者离开作用域时会怎样？
+//
+// 执行 `rustlings hint lifetimes1` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

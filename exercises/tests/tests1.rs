@@ -9,6 +9,11 @@
 //
 // Execute `rustlings hint tests1` or use the `hint` watch subcommand for a
 // hint.
+// 测试对于确保代码行为符合预期非常重要。可以使用以下命令运行本文件中的测试：`rustlings run tests1`
+//
+// 这道测试有问题——让测试通过编译！让测试通过！再让测试失败！
+//
+// 执行 `rustlings hint tests1` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

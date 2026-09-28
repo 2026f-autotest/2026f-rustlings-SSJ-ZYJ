@@ -8,6 +8,11 @@
 //
 // Execute `rustlings hint clippy1` or use the `hint` watch subcommand for a
 // hint.
+// Clippy 是一组用于分析代码的 lint 工具，可以帮助你发现常见错误并改进 Rust 代码。
+//
+// 对于这些题目，如果 Clippy 警告检查失败，代码就会编译失败；请根据输出中的建议完成题目。
+//
+// 执行 `rustlings hint clippy1` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

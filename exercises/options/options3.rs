@@ -2,6 +2,7 @@
 //
 // Execute `rustlings hint options3` or use the `hint` watch subcommand for a
 // hint.
+// 执行 `rustlings hint options3` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -18,4 +19,5 @@ fn main() {
         _ => panic!("no match!"),
     }
     y; // Fix without deleting this line.
+    // 修复此处，但不要删除这一行。
 }

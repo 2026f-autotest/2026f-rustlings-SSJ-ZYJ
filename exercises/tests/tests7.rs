@@ -30,9 +30,34 @@
 //
 // You should NOT modify this file. Modify `build.rs` in the same directory
 // to pass this exercise.
+// 构建软件包时，有些依赖既不能导入 `Cargo.toml`，也不能直接链接；
+// 还有一些预处理步骤会根据代码生成过程设置软件包专属配置。
+//
+// Cargo 并不打算替代其他构建工具，但它通过名为 `build.rs` 的自定义构建脚本与这些工具集成。
+// 该文件通常放在项目根目录，本题中则位于本题所在目录。
+//
+// 它可以用于：
+//
+// - 构建捆绑的 C 库。
+// - 查找主机系统上的 C 库。
+// - 根据规范生成 Rust 模块。
+// - 执行 crate 所需的任何平台特定配置。
+//
+// 设置配置时，可以在构建脚本中使用 `println!`，告诉 Cargo 遵循某些指令。
+// 通用格式如下：
+//
+//     println!("cargo:{}", your_command_in_string);
+//
+// 更多信息请参阅 Cargo 官方关于构建脚本的文档：
+// https://doc.rust-lang.org/cargo/reference/build-scripts.html
+//
+// 本题查找一个环境变量，并要求它处于指定范围内。
+// 可以查看测试用例了解具体细节。
+// 你不应修改本文件，而应修改同一目录下的 `build.rs` 来通过本题。
 //
 // Execute `rustlings hint tests7` or use the `hint` watch subcommand for a
 // hint.
+// 执行 `rustlings hint tests7` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

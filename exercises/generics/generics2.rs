@@ -5,6 +5,9 @@
 //
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
+// 这个强大的包装器可以存储正整数。请使用泛型重写它，使其支持包装任意类型。
+//
+// 执行 `rustlings hint generics2` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

@@ -19,6 +19,14 @@
 // - The output element is going to be a Vector of strings.
 //
 // No hints this time!
+// 让我们通过一个函数构建一个小型机器。输入是字符串和命令列表，这些命令决定对字符串执行的操作，包括：
+// - 将字符串转换为大写
+// - 去除字符串两端的空白
+// - 按指定次数向字符串追加 "bar"
+// 具体形式如下：
+// - 输入是一个由二元组组成的 Vector，第一个元素是字符串，第二个元素是命令。
+// - 输出是一个字符串 Vector。
+// 本题不提供提示！
 
 // I AM NOT DONE
 
@@ -32,11 +40,14 @@ mod my_module {
     use super::Command;
 
     // TODO: Complete the function signature!
+        // TODO：完成函数签名！
     pub fn transformer(input: ???) -> ??? {
         // TODO: Complete the output declaration!
+        // TODO：补充输出声明！
         let mut output: ??? = vec![];
         for (string, command) in input.iter() {
             // TODO: Complete the function body. You can do it!
+            // TODO：完成函数体。你可以做到！
         }
         output
     }
@@ -45,6 +56,7 @@ mod my_module {
 #[cfg(test)]
 mod tests {
     // TODO: What do we need to import to have `transformer` in scope?
+    // TODO：需要导入什么才能让 `transformer` 在此作用域可用？
     use ???;
     use super::Command;
 

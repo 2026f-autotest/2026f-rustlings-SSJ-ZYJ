@@ -2,6 +2,7 @@
 //
 // Execute `rustlings hint options2` or use the `hint` watch subcommand for a
 // hint.
+// 执行 `rustlings hint options2` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -13,6 +14,7 @@ mod tests {
         let optional_target = Some(target);
 
         // TODO: Make this an if let statement whose value is "Some" type
+        // TODO：将这里改为 if let 语句，使其值为 "Some" 类型。
         word = optional_target {
             assert_eq!(word, target);
         }
@@ -32,6 +34,8 @@ mod tests {
         // TODO: make this a while let statement - remember that vector.pop also
         // adds another layer of Option<T>. You can stack `Option<T>`s into
         // while let and if let.
+        // TODO：将这里改为 while let 语句——记住，vector.pop 还会再添加一层 Option<T>。
+        // 你可以在 while let 和 if let 中嵌套多个 `Option`。
         integer = optional_integers.pop() {
             assert_eq!(integer, cursor);
             cursor -= 1;

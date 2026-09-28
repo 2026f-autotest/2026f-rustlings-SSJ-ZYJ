@@ -12,6 +12,15 @@
 //
 // Execute `rustlings hint intro1` or use the `hint` watch subcommand for a
 // hint.
+// 关于 `I AM NOT DONE`：
+// 我们有时会鼓励你在已经解决某道题后继续尝试其他做法。
+// 如果所有内容都已正常工作，并且准备进入下一题，请删除下面的 `I AM NOT DONE` 注释。
+//
+// 如果使用 `rustlings watch` 运行本题：修改下面任意一行时，题目文件都会重新加载！
+// 可以尝试添加 `println!` 行，或修改终端中的输出。
+// 也可以删除分号，看看会发生什么！
+//
+// 执行 `rustlings hint intro1` 获取提示，或使用 watch 子命令中的 hint。
 
 
 fn main() {

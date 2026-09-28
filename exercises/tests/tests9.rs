@@ -26,6 +26,23 @@
 // line of code in the testcase should call the same function.
 //
 // You should NOT modify any existing code except for adding two lines of attributes.
+// Rust 非常擅长与 C/C++ 及其他静态编译语言共享 FFI 接口，甚至可以在代码内部完成链接！
+// 它通过 extern 代码块实现，就像下面的代码一样。
+//
+// `extern` 关键字后的短字符串表示外部导入函数遵循的 ABI。本题使用 "Rust"，
+// 其他变体还包括标准 C ABI 的 "C" 和 Windows ABI 的 "stdcall"。
+//
+// 外部导入函数声明在 extern 代码块中，以分号而不是花括号标记签名结束。
+// 可以使用属性修改这些函数声明的链接行为，例如 `#[link_name = ".."]` 可以修改实际符号名。
+//
+// 如果希望将符号导出到链接环境，也可以在具有相同 ABI 字符串的函数定义前使用 `extern` 关键字。
+// Rust 函数的默认 ABI 就是 "Rust"，因此如果要链接纯 Rust 函数，可以省略整个 extern 部分。
+//
+// Rust 默认会像 C++ 一样重整符号名。若要让函数可以按名称访问，可以使用 `#[no_mangle]` 属性。
+//
+// 本题要求测试用例能够调用 Foo 模块中的 `my_demo_function`。
+// `my_demo_function_alias` 是 `my_demo_function` 的别名，因此测试中的两行代码应调用同一个函数。
+// 除了添加两行属性外，不应修改任何现有代码。
 
 // I AM NOT DONE
 
@@ -36,6 +53,7 @@ extern "Rust" {
 
 mod Foo {
     // No `extern` equals `extern "Rust"`.
+    // 没有 `extern` 就等价于 `extern "Rust"`。
     fn my_demo_function(a: u32) -> u32 {
         a
     }
@@ -53,6 +71,10 @@ mod tests {
         //
         // SAFETY: We know those functions are aliases of a safe
         // Rust function.
+        // 默认情况下，外部导入的函数是不安全的，因为其他语言的来源不受信任。
+        // 你可以将它们包装在安全的 Rust API 中，减轻调用者的负担。
+        //
+        // 安全性依据：我们知道这些函数是安全 Rust 函数的别名。
         unsafe {
             my_demo_function(123);
             my_demo_function_alias(456);

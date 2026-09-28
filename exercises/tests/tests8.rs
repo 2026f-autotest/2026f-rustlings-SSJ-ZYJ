@@ -6,6 +6,10 @@
 //
 // Execute `rustlings hint tests8` or use the `hint` watch subcommand for a
 // hint.
+// 本题与上一题共用 `build.rs`。
+// 你需要向 `build.rs` 添加代码，使本题和上一题都能正常工作。
+//
+// 执行 `rustlings hint tests8` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

@@ -6,6 +6,9 @@
 //
 // Execute `rustlings hint threads2` or use the `hint` watch subcommand for a
 // hint.
+// 在上一题的基础上，本题要求所有线程完成工作，但这次需要由线程负责更新共享值：JobStatus.jobs_completed。
+//
+// 执行 `rustlings hint threads2` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -25,6 +28,7 @@ fn main() {
         let handle = thread::spawn(move || {
             thread::sleep(Duration::from_millis(250));
             // TODO: You must take an action before you update a shared value
+            // TODO：更新共享值前必须先采取相应操作。
             status_shared.jobs_completed += 1;
         });
         handles.push(handle);
@@ -34,6 +38,8 @@ fn main() {
         // TODO: Print the value of the JobStatus.jobs_completed. Did you notice
         // anything interesting in the output? Do you have to 'join' on all the
         // handles?
+        // TODO：打印 JobStatus.jobs_completed 的值。注意到输出中有什么有趣的现象吗？
+        // 是否必须对所有句柄调用 `join`？
         println!("jobs completed {}", ???);
     }
 }

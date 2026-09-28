@@ -10,13 +10,20 @@
 // data structure frequently found in functional programming languages. Each
 // item in a cons list contains two elements: the value of the current item and
 // the next item. The last item is a value called `Nil`.
+// 本题要实现的递归类型是 `cons list`，这是函数式编程语言中常见的数据结构。
+// cons list 的每个元素包含两个部分：当前元素的值和下一个元素。
+// 最后一个元素的值称为 `Nil`。
 //
 // Step 1: use a `Box` in the enum definition to make the code compile
 // Step 2: create both empty and non-empty cons lists by replacing `todo!()`
+// 第 1 步：在枚举定义中使用 `Box`，使代码通过编译。
+// 第 2 步：替换 `todo!()`，创建空的和非空的 cons list。
 //
 // Note: the tests should not be changed
+// 注意：不应修改测试。
 //
 // Execute `rustlings hint box1` or use the `hint` watch subcommand for a hint.
+// 执行 `rustlings hint box1` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -24,6 +31,7 @@
 pub enum List {
     Cons(i32, List),
     Nil,
+    // TODO：在枚举定义中使用 `Box`，使代码通过编译。
 }
 
 fn main() {

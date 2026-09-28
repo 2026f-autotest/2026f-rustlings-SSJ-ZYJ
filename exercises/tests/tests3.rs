@@ -6,6 +6,9 @@
 //
 // Execute `rustlings hint tests3` or use the `hint` watch subcommand for a
 // hint.
+// 让测试真正测试我们的函数，使测试通过。然后再编写第二个测试，验证调用 `is_even(5)` 时得到预期结果。
+//
+// 执行 `rustlings hint tests3` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 

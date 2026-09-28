@@ -2,12 +2,14 @@
 //
 // Execute `rustlings hint enums2` or use the `hint` watch subcommand for a
 // hint.
+// 执行 `rustlings hint enums2` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
 #[derive(Debug)]
 enum Message {
     // TODO: define the different variants used below
+    // TODO：定义下面使用到的不同枚举变体。
 }
 
 impl Message {

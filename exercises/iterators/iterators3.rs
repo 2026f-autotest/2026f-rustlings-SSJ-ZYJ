@@ -8,6 +8,12 @@
 //
 // Execute `rustlings hint iterators3` or use the `hint` watch subcommand for a
 // hint.
+// 这是一道比大多数题目都更大的练习！你可以做到！
+// 以下是你愿意接受的任务：
+// 1. 完成 divide 函数，使前四个测试通过。
+// 2. 完成 result_with_list 和 list_of_results 函数，使其余测试通过。
+//
+// 执行 `rustlings hint iterators3` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -25,6 +31,8 @@ pub struct NotDivisibleError {
 
 // Calculate `a` divided by `b` if `a` is evenly divisible by `b`.
 // Otherwise, return a suitable error.
+// 如果 `a` 能被 `b` 整除，计算 `a` 除以 `b`。
+// 否则返回适当的错误。
 pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
     todo!();
 }
@@ -32,6 +40,8 @@ pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
 // Complete the function and return a value of the correct type so the test
 // passes.
 // Desired output: Ok([1, 11, 1426, 3])
+// 完成函数并返回正确类型的值，使测试通过。
+// 预期输出：Ok([1, 11, 1426, 3])
 fn result_with_list() -> () {
     let numbers = vec![27, 297, 38502, 81];
     let division_results = numbers.into_iter().map(|n| divide(n, 27));
@@ -40,6 +50,8 @@ fn result_with_list() -> () {
 // Complete the function and return a value of the correct type so the test
 // passes.
 // Desired output: [Ok(1), Ok(11), Ok(1426), Ok(3)]
+// 完成函数并返回正确类型的值，使测试通过。
+// 预期输出：[Ok(1), Ok(11), Ok(1426), Ok(3)]
 fn list_of_results() -> () {
     let numbers = vec![27, 297, 38502, 81];
     let division_results = numbers.into_iter().map(|n| divide(n, 27));

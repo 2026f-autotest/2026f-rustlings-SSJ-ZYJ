@@ -13,12 +13,23 @@
 //
 // Execute `rustlings hint hashmaps3` or use the `hint` watch subcommand for a
 // hint.
+// 一场足球比赛的比分列表给出如下，每行格式为：
+// `"<team_1_name>,<team_2_name>,<team_1_goals>,<team_2_goals>"`
+// 例如：England,France,4,2（England 进了 4 球，France 进了 2 球）。
+//
+// 你需要构建一个比分表，其中包含球队名称、进球数和失球数。
+// 可以使用 HashMap 构建比分表；代码已经部分写好，请完成它以通过测试。
+//
+// 让代码通过测试！
+//
+// 执行 `rustlings hint hashmaps3` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
 use std::collections::HashMap;
 
 // A structure to store the goal details of a team.
+// 用于存储球队进失球详情的结构体。
 struct Team {
     goals_scored: u8,
     goals_conceded: u8,
@@ -26,6 +37,7 @@ struct Team {
 
 fn build_scores_table(results: String) -> HashMap<String, Team> {
     // The name of the team is the key and its associated struct is the value.
+    // 球队名称是键，与之关联的结构体是值。
     let mut scores: HashMap<String, Team> = HashMap::new();
 
     for r in results.lines() {
@@ -39,6 +51,8 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         // will be the number of goals conceded from team_2, and similarly
         // goals scored by team_2 will be the number of goals conceded by
         // team_1.
+        // TODO：使用当前行提取的详细信息填充比分表。
+        // 注意：team_1 的进球数是 team_2 的失球数，反之亦然。
     }
     scores
 }

@@ -7,6 +7,11 @@
 // No boiler plate code this time, you can do this!
 //
 // Execute `rustlings hint traits2` or use the `hint` watch subcommand for a hint.
+// 你的任务是为字符串向量实现 `AppendBar` trait。实现这个 trait 前，先想想对字符串向量“追加 Bar”意味着什么。
+//
+// 这次没有样板代码，你可以直接完成！
+//
+// 执行 `rustlings hint traits2` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -15,6 +20,7 @@ trait AppendBar {
 }
 
 // TODO: Implement trait `AppendBar` for a vector of strings.
+// TODO：为字符串向量实现 `AppendBar` trait。
 
 #[cfg(test)]
 mod tests {

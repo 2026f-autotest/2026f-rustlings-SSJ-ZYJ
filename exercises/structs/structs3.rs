@@ -6,6 +6,10 @@
 //
 // Execute `rustlings hint structs3` or use the `hint` watch subcommand for a
 // hint.
+// 结构体包含数据，也可以包含逻辑。本题定义了 Package 结构体，并测试附加在其上的逻辑。
+// 让代码通过编译并通过测试！
+//
+// 执行 `rustlings hint structs3` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
@@ -31,10 +35,12 @@ impl Package {
 
     fn is_international(&self) -> ??? {
         // Something goes here...
+        // 这里需要补充内容……
     }
 
     fn get_fees(&self, cents_per_gram: i32) -> ??? {
         // Something goes here...
+        // 这里需要补充内容……
     }
 }
 

@@ -8,12 +8,17 @@
 //
 // Execute `rustlings hint errors6` or use the `hint` watch subcommand for a
 // hint.
+// 对库代码而言，不推荐使用 `Box<dyn error::Error>` 这类捕获所有错误的类型，
+// 因为调用者可能希望根据错误内容做出决定，而不是只打印错误或继续传播。
+// 这里定义自定义错误类型，使调用者能够在函数返回错误时决定下一步操作。
+// 执行 `rustlings hint errors6` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
 use std::num::ParseIntError;
 
 // This is a custom error type that we will be using in `parse_pos_nonzero()`.
+// 这是 `parse_pos_nonzero()` 将使用的自定义错误类型。
 #[derive(PartialEq, Debug)]
 enum ParsePosNonzeroError {
     Creation(CreationError),
@@ -26,16 +31,20 @@ impl ParsePosNonzeroError {
     }
     // TODO: add another error conversion function here.
     // fn from_parseint...
+    // TODO：在这里添加另一个错误转换函数。
+    // fn from_parseint...
 }
 
 fn parse_pos_nonzero(s: &str) -> Result<PositiveNonzeroInteger, ParsePosNonzeroError> {
     // TODO: change this to return an appropriate error instead of panicking
     // when `parse()` returns an error.
+    // TODO：将其改为在 `parse()` 返回错误时返回适当的错误，而不是 panic。
     let x: i64 = s.parse().unwrap();
     PositiveNonzeroInteger::new(x).map_err(ParsePosNonzeroError::from_creation)
 }
 
 // Don't change anything below this line.
+// 不要修改下面这一行之后的任何内容。
 
 #[derive(PartialEq, Debug)]
 struct PositiveNonzeroInteger(u64);
@@ -63,6 +72,7 @@ mod test {
     #[test]
     fn test_parse_error() {
         // We can't construct a ParseIntError, so we have to pattern match.
+        // 我们无法构造 ParseIntError，因此必须进行模式匹配。
         assert!(matches!(
             parse_pos_nonzero("not a number"),
             Err(ParsePosNonzeroError::ParseInt(_))

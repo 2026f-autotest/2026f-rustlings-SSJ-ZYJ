@@ -2,6 +2,9 @@
 	sort
 	This problem requires you to implement a sorting algorithm
 	you can use bubble sorting, insertion sorting, heap sorting, etc.
+	排序
+	本题要求实现一种排序算法。
+	可以使用冒泡排序、插入排序、堆排序等算法。
 */
 // I AM NOT DONE
 

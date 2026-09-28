@@ -1,20 +1,23 @@
 // if3.rs
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
+// 执行 `rustlings hint if3` 获取提示，或使用 watch 子命令中的 hint。
 
+// I AM NOT DONE
 
 pub fn animal_habitat(animal: &str) -> &'static str {
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2
+        2.0
     } else if animal == "snake" {
         3
     } else {
-        0
+        "Unknown"
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW
+// 不要修改下面这条语句。
     let habitat = if identifier == 1 {
         "Beach"
     } else if identifier == 2 {
@@ -28,6 +31,8 @@ pub fn animal_habitat(animal: &str) -> &'static str {
     habitat
 }
 
+// No test changes needed.
+// 无需修改测试。
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -5,12 +5,18 @@
 //
 // Execute `rustlings hint iterators2` or use the `hint` watch subcommand for a
 // hint.
+// 本题将学习迭代器提供的一些独特优势。按照步骤完成本题。
+//
+// 执行 `rustlings hint iterators2` 获取提示，或使用 watch 子命令中的 hint。
 
 // I AM NOT DONE
 
 // Step 1.
 // Complete the `capitalize_first` function.
 // "hello" -> "Hello"
+// 第 1 步。
+// 完成 `capitalize_first` 函数。
+// `"hello"` -> `"Hello"`
 pub fn capitalize_first(input: &str) -> String {
     let mut c = input.chars();
     match c.next() {
@@ -23,6 +29,10 @@ pub fn capitalize_first(input: &str) -> String {
 // Apply the `capitalize_first` function to a slice of string slices.
 // Return a vector of strings.
 // ["hello", "world"] -> ["Hello", "World"]
+// 第 2 步。
+// 对字符串切片的切片应用 `capitalize_first` 函数。
+// 返回字符串向量。
+// `["hello", "world"]` -> `["Hello", "World"]`
 pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
     vec![]
 }
@@ -31,6 +41,10 @@ pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
 // Apply the `capitalize_first` function again to a slice of string slices.
 // Return a single string.
 // ["hello", " ", "world"] -> "Hello World"
+// 第 3 步。
+// 再次对字符串切片的切片应用 `capitalize_first` 函数。
+// 返回一个字符串。
+// `["hello", " ", "world"]` -> `"Hello World"`
 pub fn capitalize_words_string(words: &[&str]) -> String {
     String::new()
 }

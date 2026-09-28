@@ -1,6 +1,8 @@
 /*
 	single linked list merge
 	This problem requires you to merge two ordered singly linked lists into one ordered singly linked list
+	单向链表合并
+	本题要求将两个有序单向链表合并为一个有序单向链表
 */
 // I AM NOT DONE
 

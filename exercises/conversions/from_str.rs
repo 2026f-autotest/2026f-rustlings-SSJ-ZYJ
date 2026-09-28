@@ -8,6 +8,9 @@
 //
 // Execute `rustlings hint from_str` or use the `hint` watch subcommand for a
 // hint.
+// 这与 from_into.rs 类似，但这次我们将实现 `FromStr`，并在出错时返回错误，而不是回退到默认值。
+// 实现 FromStr 后，还可以对字符串使用 `parse` 方法来生成实现该 trait 的对象。
+// 更多信息请参阅 https://doc.rust-lang.org/std/str/trait.FromStr.html。
 
 use std::num::ParseIntError;
 use std::str::FromStr;
@@ -19,15 +22,20 @@ struct Person {
 }
 
 // We will use this error type for the `FromStr` implementation.
+// 我们将使用此错误类型实现 `FromStr`。
 #[derive(Debug, PartialEq)]
 enum ParsePersonError {
     // Empty input string
+    // 空的输入字符串。
     Empty,
     // Incorrect number of fields
+    // 字段数量不正确。
     BadLen,
     // Empty name field
+    // 姓名字段为空。
     NoName,
     // Wrapped error from parse::<usize>()
+    // parse::<usize>() 返回的错误
     ParseInt(ParseIntError),
 }
 
@@ -48,6 +56,17 @@ enum ParsePersonError {
 // As an aside: `Box<dyn Error>` implements `From<&'_ str>`. This means that if
 // you want to return a string error message, you can do so via just using
 // return `Err("my error message".into())`.
+// 步骤：
+// 1. 如果输入字符串长度为 0，应返回错误。
+// 2. 按其中的逗号分割字符串。
+// 3. 分割结果必须只有 2 个元素，否则返回错误。
+// 4. 取分割结果的第一个元素作为姓名。
+// 5. 取另一个元素，并使用类似 `"4".parse::<usize>()` 的方式将其解析为 `usize` 类型的年龄。
+// 6. 如果提取姓名或年龄时出现问题，应返回错误。
+// 如果一切顺利，则返回包含 Person 对象的 Result。
+//
+// 补充说明：`Box<dyn Error>` 实现了 `From<&'_ str>`。这意味着如果想返回字符串错误信息，
+// 可以直接使用 `Err("my error message".into())`。
 
 impl FromStr for Person {
     type Err = ParsePersonError;

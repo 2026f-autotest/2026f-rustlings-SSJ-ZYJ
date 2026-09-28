@@ -1,6 +1,8 @@
 /*
 	graph
 	This problem requires you to implement a basic graph functio
+	图
+	本题要求实现一个基本的图结构功能。
 */
 // I AM NOT DONE
 
