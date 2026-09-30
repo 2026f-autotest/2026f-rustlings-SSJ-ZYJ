@@ -26,18 +26,18 @@
 // Execute `rustlings hint quiz3` or use the `hint` watch subcommand for a hint.
 // 执行 `rustlings hint quiz3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
-pub struct ReportCard {
-    pub grade: f32,
+pub struct ReportCard<T> {
+    pub grade: T,
     pub student_name: String,
     pub student_age: u8,
 }
 
-impl ReportCard {
+impl<T: std::fmt::Display> ReportCard<T> {
     pub fn print(&self) -> String {
-        format!("{} ({}) - achieved a grade of {}",
-            &self.student_name, &self.student_age, &self.grade)
+        format!(
+            "{} ({}) - achieved a grade of {}",
+            &self.student_name, &self.student_age, &self.grade
+        )
     }
 }
 
@@ -63,7 +63,7 @@ mod tests {
         // TODO: Make sure to change the grade here after you finish the exercise.
         // TODO：完成题目后，记得将这里的成绩改为字母成绩。
         let report_card = ReportCard {
-            grade: 2.1,
+            grade: "A+",
             student_name: "Gary Plotter".to_string(),
             student_age: 11,
         };

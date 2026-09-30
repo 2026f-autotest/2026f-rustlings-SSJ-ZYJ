@@ -7,15 +7,13 @@
 // 让代码通过编译并通过测试！
 // 执行 `rustlings hint vecs1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 fn array_and_vec() -> ([i32; 4], Vec<i32>) {
     let a = [10, 20, 30, 40]; // a plain array
-    // 普通数组。
-    let v = // TODO: declare your vector here with the macro for vectors
-// TODO：在这里使用向量宏声明你的向量。
+                              // 普通数组。
+    let v = [10, 20, 30, 40]; // TODO: declare your vector here with the macro for vectors
+                              // TODO：在这里使用向量宏声明你的向量。
 
-    (a, v)
+    (a, v.to_vec())
 }
 
 #[cfg(test)]

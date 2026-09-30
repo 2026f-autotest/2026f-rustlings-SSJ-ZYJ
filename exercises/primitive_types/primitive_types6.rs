@@ -6,15 +6,12 @@
 // 将访问第二个元素的表达式放在 ??? 处，使测试通过。
 // 执行 `rustlings hint primitive_types6` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 #[test]
 fn indexing_tuple() {
     let numbers = (1, 2, 3);
     // Replace below ??? with the tuple indexing syntax.
-// 将下面的 ??? 替换为元组索引语法。
-    let second = ???;
+    // 将下面的 ??? 替换为元组索引语法。
+    let second = numbers.1;
 
-    assert_eq!(2, second,
-        "This is not the 2nd number in the tuple!")
+    assert_eq!(2, second, "This is not the 2nd number in the tuple!")
 }

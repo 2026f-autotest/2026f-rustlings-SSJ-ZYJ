@@ -10,14 +10,12 @@
 // 这家商店正在促销：价格为偶数时减免 10 Rustbucks，价格为奇数时减免 3 Rustbucks。
 // （暂时不用担心函数体；本题只关注函数签名。这也是提前了解后续题目的好机会！）
 
-// I AM NOT DONE
-
 fn main() {
     let original_price = 51;
     println!("Your sale price is {}", sale_price(original_price));
 }
 
-fn sale_price(price: i32) -> {
+fn sale_price(price: i32) -> i32 {
     if is_even(price) {
         price - 10
     } else {

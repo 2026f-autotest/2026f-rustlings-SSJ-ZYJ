@@ -11,8 +11,6 @@
 //
 // 执行 `rustlings hint structs3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 #[derive(Debug)]
 struct Package {
     sender_country: String,
@@ -33,14 +31,16 @@ impl Package {
         }
     }
 
-    fn is_international(&self) -> ??? {
+    fn is_international(&self) -> bool {
         // Something goes here...
         // 这里需要补充内容……
+        self.sender_country != self.recipient_country
     }
 
-    fn get_fees(&self, cents_per_gram: i32) -> ??? {
+    fn get_fees(&self, cents_per_gram: i32) -> i32 {
         // Something goes here...
         // 这里需要补充内容……
+        cents_per_gram * self.weight_in_grams
     }
 }
 

@@ -11,11 +11,9 @@
 //
 // 执行 `rustlings hint errors3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 use std::num::ParseIntError;
 
-fn main() {
+fn main() -> Result<(), ParseIntError> {
     let mut tokens = 100;
     let pretend_user_input = "8";
 
@@ -27,6 +25,8 @@ fn main() {
         tokens -= cost;
         println!("You now have {} tokens.", tokens);
     }
+
+    Ok(())
 }
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {

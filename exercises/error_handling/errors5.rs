@@ -35,15 +35,13 @@
 // hint.
 // 执行 `rustlings hint errors5` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 use std::error;
 use std::fmt;
 use std::num::ParseIntError;
 
 // TODO: update the return type of `main()` to make this compile.
 // TODO：更新 `main()` 的返回类型，使代码通过编译。
-fn main() -> Result<(), Box<dyn ???>> {
+fn main() -> Result<(), Box<dyn error::Error>> {
     let pretend_user_input = "42";
     let x: i64 = pretend_user_input.parse()?;
     println!("output={:?}", PositiveNonzeroInteger::new(x)?);

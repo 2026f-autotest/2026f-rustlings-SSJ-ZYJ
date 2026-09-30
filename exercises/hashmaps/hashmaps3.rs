@@ -24,8 +24,6 @@
 //
 // 执行 `rustlings hint hashmaps3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 use std::collections::HashMap;
 
 // A structure to store the goal details of a team.
@@ -53,6 +51,18 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         // team_1.
         // TODO：使用当前行提取的详细信息填充比分表。
         // 注意：team_1 的进球数是 team_2 的失球数，反之亦然。
+        let team_1 = scores.entry(team_1_name).or_insert(Team {
+            goals_conceded: 0,
+            goals_scored: 0,
+        });
+        team_1.goals_scored += team_1_score;
+        team_1.goals_conceded += team_2_score;
+        let team_2 = scores.entry(team_2_name).or_insert(Team {
+            goals_conceded: 0,
+            goals_scored: 0,
+        });
+        team_2.goals_scored += team_2_score;
+        team_2.goals_conceded += team_1_score;
     }
     scores
 }

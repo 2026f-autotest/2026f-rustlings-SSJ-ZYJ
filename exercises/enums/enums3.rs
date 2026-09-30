@@ -8,11 +8,13 @@
 //
 // 执行 `rustlings hint enums3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 enum Message {
     // TODO: implement the message variant types based on their usage below
     // TODO：根据下面的使用方式实现消息变体类型。
+    ChangeColor(u8, u8, u8),
+    Echo(String),
+    Move(Point),
+    Quit,
 }
 
 struct Point {
@@ -24,7 +26,7 @@ struct State {
     color: (u8, u8, u8),
     position: Point,
     quit: bool,
-    message: String
+    message: String,
 }
 
 impl State {
@@ -36,7 +38,9 @@ impl State {
         self.quit = true;
     }
 
-    fn echo(&mut self, s: String) { self.message = s }
+    fn echo(&mut self, s: String) {
+        self.message = s
+    }
 
     fn move_position(&mut self, p: Point) {
         self.position = p;
@@ -49,6 +53,12 @@ impl State {
         // extra parentheses: fn function((t, u, p, l, e))
         // TODO：创建 match 表达式，处理不同的消息变体。
         // 注意：将元组作为函数参数传递时，需要额外的括号，例如：fn function((t, u, p, l, e))
+        match message {
+            Message::ChangeColor(r, g, b) => self.change_color((r, g, b)),
+            Message::Echo(s) => self.echo(s),
+            Message::Move(p) => self.move_position(p),
+            Message::Quit => self.quit(),
+        }
     }
 }
 

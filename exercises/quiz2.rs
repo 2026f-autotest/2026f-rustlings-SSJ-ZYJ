@@ -28,8 +28,6 @@
 // - 输出是一个字符串 Vector。
 // 本题不提供提示！
 
-// I AM NOT DONE
-
 pub enum Command {
     Uppercase,
     Trim,
@@ -40,14 +38,25 @@ mod my_module {
     use super::Command;
 
     // TODO: Complete the function signature!
-        // TODO：完成函数签名！
-    pub fn transformer(input: ???) -> ??? {
+    // TODO：完成函数签名！
+    pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> {
         // TODO: Complete the output declaration!
         // TODO：补充输出声明！
-        let mut output: ??? = vec![];
+        let mut output: Vec<String> = vec![];
         for (string, command) in input.iter() {
             // TODO: Complete the function body. You can do it!
             // TODO：完成函数体。你可以做到！
+            match command {
+                Command::Uppercase => output.push(string.to_uppercase()),
+                Command::Trim => output.push(string.trim().to_string()),
+                Command::Append(n) => {
+                    let mut s = string.clone();
+                    for _ in 0..*n {
+                        s.push_str("bar");
+                    }
+                    output.push(s);
+                }
+            }
         }
         output
     }
@@ -57,8 +66,8 @@ mod my_module {
 mod tests {
     // TODO: What do we need to import to have `transformer` in scope?
     // TODO：需要导入什么才能让 `transformer` 在此作用域可用？
-    use ???;
     use super::Command;
+    use crate::my_module::transformer;
 
     #[test]
     fn it_works() {

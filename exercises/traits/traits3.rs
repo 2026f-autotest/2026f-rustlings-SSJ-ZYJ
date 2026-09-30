@@ -12,10 +12,10 @@
 // hint.
 // 执行 `rustlings hint traits3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 pub trait Licensed {
-    fn licensing_info(&self) -> String;
+    fn licensing_info(&self) -> String {
+        String::from("Some information")
+    }
 }
 
 struct SomeSoftware {
@@ -28,7 +28,7 @@ struct OtherSoftware {
 
 impl Licensed for SomeSoftware {} // Don't edit this line
 impl Licensed for OtherSoftware {} // Don't edit this line
-// 不要修改这两行。
+                                   // 不要修改这两行。
 
 #[cfg(test)]
 mod tests {

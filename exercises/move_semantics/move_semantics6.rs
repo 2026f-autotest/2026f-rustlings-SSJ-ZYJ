@@ -3,26 +3,24 @@
 // You can't change anything except adding or removing references.
 // 除了添加或删除引用外，不能进行其他修改。
 
-// I AM NOT DONE
-
 fn main() {
     let data = "Rust is great!".to_string();
 
-    get_char(data);
+    get_char(&data);
 
-    string_uppercase(&data);
+    string_uppercase(data);
 }
 
 // Should not take ownership
 // 不应取得所有权。
-fn get_char(data: String) -> char {
+fn get_char(data: &String) -> char {
     data.chars().last().unwrap()
 }
 
 // Should take ownership
 // 应取得所有权。
-fn string_uppercase(mut data: &String) {
-    data = &data.to_uppercase();
+fn string_uppercase(mut data: String) {
+    data = data.to_uppercase();
 
     println!("{}", data);
 }

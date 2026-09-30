@@ -8,12 +8,10 @@
 //
 // 执行 `rustlings hint strings2` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 fn main() {
     let word = String::from("green"); // Try not changing this line :)
-    // 尽量不要修改这一行 :)
-    if is_a_color_word(word) {
+                                      // 尽量不要修改这一行 :)
+    if is_a_color_word(&word) {
         println!("That is a color word I know!");
     } else {
         println!("That is not a color word I know.");

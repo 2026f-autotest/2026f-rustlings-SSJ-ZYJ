@@ -4,8 +4,6 @@
 // hint.
 // 执行 `rustlings hint options1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 // This function returns how much icecream there is left in the fridge.
 // If it's before 10PM, there's 5 pieces left. At 10PM, someone eats them
 // all, so there'll be no more left :(
@@ -19,7 +17,13 @@ fn maybe_icecream(time_of_day: u16) -> Option<u16> {
     // 这里使用 24 小时制，因此晚上 10 点是 22，凌晨 12 点是 0。
     // 当 time_of_day > 23 时，Option 返回值应能妥善处理这种情况。
     // TODO：完成函数体——记得返回一个 Option！
-    ???
+    if time_of_day < 22 {
+        Some(5)
+    } else if time_of_day > 23 {
+        None
+    } else {
+        Some(0)
+    }
 }
 
 #[cfg(test)]
@@ -41,6 +45,6 @@ mod tests {
         // Option?
         // TODO：修复这个测试。如何获取 Option 中包含的值？
         let icecreams = maybe_icecream(12);
-        assert_eq!(icecreams, 5);
+        assert_eq!(icecreams.unwrap(), 5);
     }
 }

@@ -11,8 +11,6 @@
 // hint.
 // 执行 `rustlings hint traits5` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 pub trait SomeTrait {
     fn some_function(&self) -> bool {
         true
@@ -35,7 +33,7 @@ impl OtherTrait for OtherStruct {}
 
 // YOU MAY ONLY CHANGE THE NEXT LINE
 // 只能修改下一行。
-fn some_func(item: ??) -> bool {
+fn some_func(item: impl SomeTrait + OtherTrait) -> bool {
     item.some_function() && item.other_function()
 }
 

@@ -4,13 +4,11 @@
 // 在 ??? 处从数组 a 中取出切片，使测试通过。
 // 执行 `rustlings hint primitive_types4` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 #[test]
 fn slice_out_of_array() {
     let a = [1, 2, 3, 4, 5];
 
-    let nice_slice = ???
+    let nice_slice = &a[1..=3];
 
     assert_eq!([2, 3, 4], nice_slice)
 }

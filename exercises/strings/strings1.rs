@@ -8,13 +8,11 @@
 //
 // 执行 `rustlings hint strings1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 fn main() {
     let answer = current_favorite_color();
     println!("My current favorite color is {}", answer);
 }
 
 fn current_favorite_color() -> String {
-    "blue"
+    "blue".to_string()
 }

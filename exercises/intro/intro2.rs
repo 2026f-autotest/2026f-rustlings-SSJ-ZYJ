@@ -4,8 +4,6 @@
 // 让代码打印出对世界的问候。
 // 执行 `rustlings hint intro2` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 fn main() {
-    println!("Hello {}!");
+    println!("Hello World!");
 }

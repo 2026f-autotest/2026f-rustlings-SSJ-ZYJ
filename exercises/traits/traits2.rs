@@ -13,14 +13,18 @@
 //
 // 执行 `rustlings hint traits2` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
 // TODO: Implement trait `AppendBar` for a vector of strings.
 // TODO：为字符串向量实现 `AppendBar` trait。
+impl AppendBar for Vec<String> {
+    fn append_bar(mut self) -> Self {
+        self.push(String::from("Bar"));
+        self
+    }
+}
 
 #[cfg(test)]
 mod tests {

@@ -4,9 +4,7 @@
 // 让代码通过编译！
 // 执行 `rustlings hint variables1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 fn main() {
-    x = 5;
+    let x = 5;
     println!("x has the value {}", x);
 }

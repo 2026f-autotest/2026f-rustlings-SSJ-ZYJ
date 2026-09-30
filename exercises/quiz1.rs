@@ -19,12 +19,16 @@
 // - 如果玛丽购买超过 40 个苹果，每个苹果只需 1 rustbuck！
 // 编写一个函数，根据购买数量计算订单价格。不提供提示！
 
-// I AM NOT DONE
-
 // Put your function here!
 // fn calculate_price_of_apples {
 // 在这里编写你的函数！
-
+fn calculate_price_of_apples(n: i32) -> i32 {
+    if n <= 40 {
+        2 * n
+    } else {
+        n
+    }
+}
 // Don't modify this function!
 // 不要修改这个函数！
 #[test]

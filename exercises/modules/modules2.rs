@@ -10,13 +10,11 @@
 // hint.
 // 执行 `rustlings hint modules2` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 mod delicious_snacks {
     // TODO: Fix these use statements
     // TODO：修复这些 use 语句。
-    use self::fruits::PEAR as ???
-    use self::veggies::CUCUMBER as ???
+    pub use self::fruits::PEAR as fruit;
+    pub use self::veggies::CUCUMBER as veggie;
 
     mod fruits {
         pub const PEAR: &'static str = "Pear";

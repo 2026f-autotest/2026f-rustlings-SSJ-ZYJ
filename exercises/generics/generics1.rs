@@ -9,9 +9,7 @@
 //
 // 执行 `rustlings hint generics1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 fn main() {
-    let mut shopping_list: Vec<?> = Vec::new();
+    let mut shopping_list: Vec<&str> = Vec::new();
     shopping_list.push("milk");
 }

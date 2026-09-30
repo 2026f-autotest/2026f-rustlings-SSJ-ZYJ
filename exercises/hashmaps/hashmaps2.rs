@@ -23,8 +23,6 @@
 //
 // 执行 `rustlings hint hashmaps2` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 use std::collections::HashMap;
 
 #[derive(Hash, PartialEq, Eq)]
@@ -51,6 +49,7 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         // already present!
         // TODO：如果水果篮中还没有某种水果，就将其加入。
         // 注意：不能加入已经存在的水果类型！
+        basket.entry(fruit).or_insert(1);
     }
 }
 
@@ -93,7 +92,7 @@ mod tests {
         let count = basket.values().sum::<u32>();
         assert!(count > 11);
     }
-    
+
     #[test]
     fn all_fruit_types_in_basket() {
         let mut basket = get_fruit_basket();

@@ -13,8 +13,6 @@
 // 这里定义自定义错误类型，使调用者能够在函数返回错误时决定下一步操作。
 // 执行 `rustlings hint errors6` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 use std::num::ParseIntError;
 
 // This is a custom error type that we will be using in `parse_pos_nonzero()`.
@@ -33,13 +31,16 @@ impl ParsePosNonzeroError {
     // fn from_parseint...
     // TODO：在这里添加另一个错误转换函数。
     // fn from_parseint...
+    fn from_parseint(err: ParseIntError) -> ParsePosNonzeroError {
+        ParsePosNonzeroError::ParseInt(err)
+    }
 }
 
 fn parse_pos_nonzero(s: &str) -> Result<PositiveNonzeroInteger, ParsePosNonzeroError> {
     // TODO: change this to return an appropriate error instead of panicking
     // when `parse()` returns an error.
     // TODO：将其改为在 `parse()` 返回错误时返回适当的错误，而不是 panic。
-    let x: i64 = s.parse().unwrap();
+    let x: i64 = s.parse().map_err(ParsePosNonzeroError::from_parseint)?;
     PositiveNonzeroInteger::new(x).map_err(ParsePosNonzeroError::from_creation)
 }
 

@@ -12,11 +12,9 @@
 // hint.
 // 执行 `rustlings hint modules3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 // TODO: Complete this use statement
 // TODO：完成这条 use 语句。
-use ???
+use std::time::{SystemTime, UNIX_EPOCH};
 
 fn main() {
     match SystemTime::now().duration_since(UNIX_EPOCH) {
