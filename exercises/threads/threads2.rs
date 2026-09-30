@@ -10,9 +10,7 @@
 //
 // 执行 `rustlings hint threads2` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
-use std::sync::Arc;
+use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
 
@@ -21,7 +19,7 @@ struct JobStatus {
 }
 
 fn main() {
-    let status = Arc::new(JobStatus { jobs_completed: 0 });
+    let status = Arc::new(Mutex::new(JobStatus { jobs_completed: 0 }));
     let mut handles = vec![];
     for _ in 0..10 {
         let status_shared = Arc::clone(&status);
@@ -29,7 +27,8 @@ fn main() {
             thread::sleep(Duration::from_millis(250));
             // TODO: You must take an action before you update a shared value
             // TODO：更新共享值前必须先采取相应操作。
-            status_shared.jobs_completed += 1;
+            let mut status = status_shared.lock().unwrap();
+            status.jobs_completed += 1;
         });
         handles.push(handle);
     }
@@ -40,6 +39,6 @@ fn main() {
         // handles?
         // TODO：打印 JobStatus.jobs_completed 的值。注意到输出中有什么有趣的现象吗？
         // 是否必须对所有句柄调用 `join`？
-        println!("jobs completed {}", ???);
+        println!("jobs completed {}", status.lock().unwrap().jobs_completed);
     }
 }

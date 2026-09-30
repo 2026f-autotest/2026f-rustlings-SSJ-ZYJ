@@ -15,12 +15,10 @@
 //
 // 执行 `rustlings hint tests1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 #[cfg(test)]
 mod tests {
     #[test]
     fn you_can_assert() {
-        assert!();
+        assert!(true);
     }
 }

@@ -8,12 +8,10 @@
 // hint.
 // 执行 `rustlings hint tests2` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 #[cfg(test)]
 mod tests {
     #[test]
     fn you_can_assert_eq() {
-        assert_eq!();
+        assert_eq!(1, 1);
     }
 }

@@ -4,8 +4,6 @@
 // hint.
 // 执行 `rustlings hint iterators4` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
     // Do not use:
@@ -25,6 +23,7 @@ pub fn factorial(num: u64) -> u64 {
     // 如果想挑战更高难度，不要使用：
     // - 递归
     // 执行 `rustlings hint iterators4` 获取提示。
+    (1..=num).product()
 }
 
 #[cfg(test)]

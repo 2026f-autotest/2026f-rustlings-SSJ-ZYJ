@@ -8,17 +8,18 @@
 //
 // 执行 `rustlings hint lifetimes3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
-struct Book {
-    author: &str,
-    title: &str,
+struct Book<'a> {
+    author: &'a str,
+    title: &'a str,
 }
 
 fn main() {
     let name = String::from("Jill Smith");
     let title = String::from("Fish Flying");
-    let book = Book { author: &name, title: &title };
+    let book = Book {
+        author: &name,
+        title: &title,
+    };
 
     println!("{} by {}", book.title, book.author);
 }

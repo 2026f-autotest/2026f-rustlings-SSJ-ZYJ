@@ -9,7 +9,7 @@
 //
 // 执行 `rustlings hint iterators2` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
+use std::vec;
 
 // Step 1.
 // Complete the `capitalize_first` function.
@@ -21,7 +21,7 @@ pub fn capitalize_first(input: &str) -> String {
     let mut c = input.chars();
     match c.next() {
         None => String::new(),
-        Some(first) => ???,
+        Some(first) => first.to_uppercase().chain(c).collect(),
     }
 }
 
@@ -34,7 +34,7 @@ pub fn capitalize_first(input: &str) -> String {
 // 返回字符串向量。
 // `["hello", "world"]` -> `["Hello", "World"]`
 pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
-    vec![]
+    words.iter().map(|&word| capitalize_first(word)).collect()
 }
 
 // Step 3.
@@ -46,7 +46,11 @@ pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
 // 返回一个字符串。
 // `["hello", " ", "world"]` -> `"Hello World"`
 pub fn capitalize_words_string(words: &[&str]) -> String {
-    String::new()
+    words
+        .iter()
+        .map(|&word| capitalize_first(word))
+        .collect::<Vec<String>>()
+        .join("")
 }
 
 #[cfg(test)]

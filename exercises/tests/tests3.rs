@@ -10,8 +10,6 @@
 //
 // 执行 `rustlings hint tests3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 pub fn is_even(num: i32) -> bool {
     num % 2 == 0
 }
@@ -22,11 +20,11 @@ mod tests {
 
     #[test]
     fn is_true_when_even() {
-        assert!();
+        assert!(is_even(2));
     }
 
     #[test]
     fn is_false_when_odd() {
-        assert!();
+        assert!(!is_even(1));
     }
 }

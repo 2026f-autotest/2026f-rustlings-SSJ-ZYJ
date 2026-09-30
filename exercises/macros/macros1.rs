@@ -4,8 +4,7 @@
 // hint.
 // 执行 `rustlings hint macros1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
+#[macro_export]
 macro_rules! my_macro {
     () => {
         println!("Check out my macro!");
@@ -13,5 +12,5 @@ macro_rules! my_macro {
 }
 
 fn main() {
-    my_macro();
+    my_macro!();
 }

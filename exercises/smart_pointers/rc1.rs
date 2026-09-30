@@ -15,8 +15,6 @@
 // Execute `rustlings hint rc1` or use the `hint` watch subcommand for a hint.
 // 执行 `rustlings hint rc1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 use std::rc::Rc;
 
 #[derive(Debug)]
@@ -66,19 +64,19 @@ fn main() {
 
     // TODO
     // TODO：补充 Saturn 的定义。
-    let saturn = Planet::Saturn(Rc::new(Sun {}));
+    let saturn = Planet::Saturn(Rc::clone(&sun));
     println!("reference count = {}", Rc::strong_count(&sun)); // 7 references
     saturn.details();
 
     // TODO
     // TODO：补充 Uranus 的定义。
-    let uranus = Planet::Uranus(Rc::new(Sun {}));
+    let uranus = Planet::Uranus(Rc::clone(&sun));
     println!("reference count = {}", Rc::strong_count(&sun)); // 8 references
     uranus.details();
 
     // TODO
     // TODO：补充 Neptune 的定义。
-    let neptune = Planet::Neptune(Rc::new(Sun {}));
+    let neptune = Planet::Neptune(Rc::clone(&sun));
     println!("reference count = {}", Rc::strong_count(&sun)); // 9 references
     neptune.details();
 
@@ -101,14 +99,17 @@ fn main() {
 
     // TODO
     // TODO：补充清理引用的代码。
+    drop(earth);
     println!("reference count = {}", Rc::strong_count(&sun)); // 3 references
 
     // TODO
     // TODO：补充清理引用的代码。
+    drop(venus);
     println!("reference count = {}", Rc::strong_count(&sun)); // 2 references
 
     // TODO
     // TODO：补充清理引用的代码。
+    drop(mercury);
     println!("reference count = {}", Rc::strong_count(&sun)); // 1 reference
 
     assert_eq!(Rc::strong_count(&sun), 1);

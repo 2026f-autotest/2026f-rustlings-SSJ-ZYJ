@@ -25,11 +25,9 @@
 // Execute `rustlings hint box1` or use the `hint` watch subcommand for a hint.
 // 执行 `rustlings hint box1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 #[derive(PartialEq, Debug)]
 pub enum List {
-    Cons(i32, List),
+    Cons(i32, Box<List>),
     Nil,
     // TODO：在枚举定义中使用 `Box`，使代码通过编译。
 }
@@ -43,11 +41,11 @@ fn main() {
 }
 
 pub fn create_empty_list() -> List {
-    todo!()
+    List::Nil
 }
 
 pub fn create_non_empty_list() -> List {
-    todo!()
+    List::Cons(1, Box::new(List::Nil))
 }
 
 #[cfg(test)]

@@ -12,8 +12,6 @@
 //
 // 执行 `rustlings hint threads1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 use std::thread;
 use std::time::{Duration, Instant};
 
@@ -32,6 +30,7 @@ fn main() {
     for handle in handles {
         // TODO: a struct is returned from thread::spawn, can you use it?
         // TODO：`thread::spawn` 返回了一个结构体，你能使用它吗？
+        results.push(handle.join().unwrap());
     }
 
     if results.len() != 10 {

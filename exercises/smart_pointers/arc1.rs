@@ -37,22 +37,21 @@
 // Execute `rustlings hint arc1` or use the `hint` watch subcommand for a hint.
 // 执行 `rustlings hint arc1` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 #![forbid(unused_imports)] // Do not change this, (or the next) line.
-// 不要修改这一行（也不要修改下一行）。
 use std::sync::Arc;
 use std::thread;
 
 fn main() {
     let numbers: Vec<_> = (0..100u32).collect();
-    let shared_numbers = // TODO
+    let shared_numbers = Arc::new(numbers);
+    // TODO
     // TODO：在第一个 TODO 注释处为 `shared_numbers` 填入一个值，
     // 并在第二个 TODO 注释处为 `child_numbers` 创建初始绑定。尽量不要复制 `numbers` 向量！
     let mut joinhandles = Vec::new();
 
     for offset in 0..8 {
-        let child_numbers = // TODO
+        let child_numbers = Arc::clone(&shared_numbers);
+        // TODO
         // TODO：在第二个 TODO 注释处为 `child_numbers` 创建初始绑定。
         joinhandles.push(thread::spawn(move || {
             let sum: u32 = child_numbers.iter().filter(|&&n| n % 8 == offset).sum();

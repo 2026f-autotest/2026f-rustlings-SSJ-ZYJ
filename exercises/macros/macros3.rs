@@ -8,9 +8,8 @@
 //
 // 执行 `rustlings hint macros3` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 mod macros {
+    #[macro_export]
     macro_rules! my_macro {
         () => {
             println!("Check out my macro!");

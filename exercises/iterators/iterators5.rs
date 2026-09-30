@@ -17,8 +17,6 @@
 //
 // 执行 `rustlings hint iterators5` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 use std::collections::HashMap;
 
 #[derive(Clone, Copy, PartialEq, Eq)]
@@ -43,7 +41,7 @@ fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
     // map = { "variables1": Complete, "from_str": None, ... }
     // map 是一个以 String 为键、以 Progress 为值的哈希映射。
     // map = { "variables1": Complete, "from_str": None, ... }
-    todo!();
+    map.values().filter(|&&val| val == value).count()
 }
 
 fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
@@ -65,7 +63,11 @@ fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Pr
     // collection 是一个哈希映射切片。
     // collection = [{ "variables1": Complete, "from_str": None, ... },
     //     { "variables2": Complete, ... }, ... ]
-    todo!();
+    collection
+        .iter()
+        .flat_map(|map| map.values())
+        .filter(|&&val| val == value)
+        .count()
 }
 
 #[cfg(test)]
