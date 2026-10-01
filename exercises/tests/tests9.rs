@@ -44,16 +44,16 @@
 // `my_demo_function_alias` 是 `my_demo_function` 的别名，因此测试中的两行代码应调用同一个函数。
 // 除了添加两行属性外，不应修改任何现有代码。
 
-// I AM NOT DONE
-
 extern "Rust" {
     fn my_demo_function(a: u32) -> u32;
+    #[link_name = "my_demo_function"]
     fn my_demo_function_alias(a: u32) -> u32;
 }
 
-mod Foo {
+mod foo {
     // No `extern` equals `extern "Rust"`.
     // 没有 `extern` 就等价于 `extern "Rust"`。
+    #[no_mangle]
     fn my_demo_function(a: u32) -> u32 {
         a
     }

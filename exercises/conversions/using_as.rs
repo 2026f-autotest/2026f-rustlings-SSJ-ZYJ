@@ -15,11 +15,9 @@
 //
 // 执行 `rustlings hint using_as` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
-
 fn average(values: &[f64]) -> f64 {
     let total = values.iter().sum::<f64>();
-    total / values.len()
+    total / values.len() as f64
 }
 
 fn main() {

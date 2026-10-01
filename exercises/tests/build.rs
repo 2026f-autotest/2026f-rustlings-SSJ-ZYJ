@@ -15,11 +15,8 @@ fn main() {
         .duration_since(std::time::UNIX_EPOCH)
         .unwrap()
         .as_secs(); // What's the use of this timestamp here?
-        // 这个时间戳在这里有什么作用？
-    let your_command = format!(
-        "Your command here with {}, please checkout exercises/tests/build.rs",
-        timestamp
-    );
+                    // 这个时间戳在这里有什么作用？
+    let your_command = format!("rustc-env=TEST_FOO={}", timestamp);
     println!("cargo:{}", your_command);
 
     // In tests8, we should enable "pass" feature to make the
@@ -27,6 +24,6 @@ fn main() {
     // Cargo about that.
     // 在 tests8 中，需要启用 "pass" feature，使测试用例提前返回。
     // 补充命令，告诉 Cargo 如何启用它。
-    let your_command = "Your command here, please checkout exercises/tests/build.rs";
+    let your_command = "rustc-cfg=feature=\"pass\"";
     println!("cargo:{}", your_command);
 }

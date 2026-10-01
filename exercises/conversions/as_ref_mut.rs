@@ -12,13 +12,13 @@
 //
 // 执行 `rustlings hint as_ref_mut` 获取提示，或使用 watch 子命令中的 hint。
 
-// I AM NOT DONE
+use std::convert::{AsMut, AsRef};
 
 // Obtain the number of bytes (not characters) in the given argument.
 // TODO: Add the AsRef trait appropriately as a trait bound.
 // 获取参数的字节数（不是字符数）。
 // TODO：将 AsRef trait 适当地添加为 trait 约束。
-fn byte_counter<T>(arg: T) -> usize {
+fn byte_counter<T: AsRef<str>>(arg: T) -> usize {
     arg.as_ref().as_bytes().len()
 }
 
@@ -26,7 +26,7 @@ fn byte_counter<T>(arg: T) -> usize {
 // TODO: Add the AsRef trait appropriately as a trait bound.
 // 获取参数的字符数（不是字节数）。
 // TODO：将 AsRef trait 适当地添加为 trait 约束。
-fn char_counter<T>(arg: T) -> usize {
+fn char_counter<T: AsRef<str>>(arg: T) -> usize {
     arg.as_ref().chars().count()
 }
 
@@ -34,10 +34,11 @@ fn char_counter<T>(arg: T) -> usize {
 // TODO: Add the appropriate trait bound.
 // 使用 as_mut() 计算一个数字的平方。
 // TODO：添加适当的 trait 约束。
-fn num_sq<T>(arg: &mut T) {
+fn num_sq<T: AsMut<u32>>(arg: &mut T) {
     // TODO: Implement the function body.
     // TODO：实现函数体。
-    ???
+    let val = arg.as_mut();
+    *val = *val * *val;
 }
 
 #[cfg(test)]

@@ -1,17 +1,16 @@
 /*
-	bfs
-	This problem requires you to implement a basic BFS algorithm
-	bfs
-	本题要求实现基本的广度优先搜索算法。
+    bfs
+    This problem requires you to implement a basic BFS algorithm
+    bfs
+    本题要求实现基本的广度优先搜索算法。
 */
 
-//I AM NOT DONE
-use std::collections::VecDeque;
+use std::{collections::VecDeque, num::NonZeroUsize};
 
 // Define a graph
 // 定义一个图。
 struct Graph {
-    adj: Vec<Vec<usize>>, 
+    adj: Vec<Vec<usize>>,
 }
 
 impl Graph {
@@ -26,21 +25,34 @@ impl Graph {
     // Add an edge to the graph
     // 向图中添加一条边。
     fn add_edge(&mut self, src: usize, dest: usize) {
-        self.adj[src].push(dest); 
-        self.adj[dest].push(src); 
+        self.adj[src].push(dest);
+        self.adj[dest].push(src);
     }
 
     // Perform a breadth-first search on the graph, return the order of visited nodes
     // 执行广度优先搜索，并返回访问节点的顺序。
     fn bfs_with_return(&self, start: usize) -> Vec<usize> {
-        
-		//TODO
+        let mut visit_order = Vec::new();
+        let mut visited = vec![false; self.adj.len()];
+        let mut quene = VecDeque::new();
 
-        let mut visit_order = vec![];
+        visited[start] = true;
+        quene.push_back(start);
+
+        while let Some(node) = quene.pop_front() {
+            visit_order.push(node);
+
+            for &neighbor in &self.adj[node] {
+                if !visited[neighbor] {
+                    visited[neighbor] = true;
+                    quene.push_back(neighbor);
+                }
+            }
+        }
+
         visit_order
     }
 }
-
 
 #[cfg(test)]
 mod tests {
@@ -90,4 +102,3 @@ mod tests {
         assert_eq!(visited_order, vec![0]);
     }
 }
-

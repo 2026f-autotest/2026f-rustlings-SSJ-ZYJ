@@ -55,10 +55,33 @@ impl Default for Person {
 // 5. 取分割结果的另一个元素，并将其解析为 `usize` 类型的年龄。
 // 如果解析年龄时出现问题，返回 Person 的默认值；否则返回一个包含这些结果的 Person 对象。
 
-// I AM NOT DONE
-
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        if s.is_empty() {
+            return Person::default();
+        }
+
+        let mut parts = s.splitn(2, ',');
+
+        let name = match parts.next() {
+            Some(name) if !name.is_empty() => name,
+            _ => return Person::default(),
+        };
+
+        let age_str = match parts.next() {
+            Some(age) => age,
+            None => return Person::default(),
+        };
+
+        let age = match age_str.parse::<usize>() {
+            Ok(age) => age,
+            Err(_) => return Person::default(),
+        };
+
+        Person {
+            name: name.to_string(),
+            age,
+        }
     }
 }
 
